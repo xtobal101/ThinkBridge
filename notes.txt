@@ -1,0 +1,11 @@
+<a class="ember-view org-top-card-summary-info-list__info-item" href="/search/results/people/?currentCompany=%5B%221441%22%2C%2216140%22%2C%2217876832%22%2C%2210440912%22%2C%22791962%22%5D&amp;origin=COMPANY_PAGE_CANNED_SEARCH" id="ember26">
+<span class="t-normal t-black--light link-without-visited-state link-without-hover-state">
+          284,895 employees
+        </span>
+</a>
+
+
+soup = BeautifulSoup(page)
+badges = soup.body.find('div', attrs={'class': 'badges'})
+for span in badges.span.find_all('span', recursive=False):
+    print span.attrs['title']
